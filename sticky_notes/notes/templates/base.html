@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Sticky Notes{% endblock %}</title>
+    <!-- Link to your CSS stylesheet -->
+    <link rel="stylesheet" href="{% static 'notes/styles.css' %}">
+    <!-- Include any additional meta tags, scripts, or stylesheets -->
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>{% block header %}My Sticky Notes{% endblock %}</h1>
+        <!-- Add navigation links or other header content here -->
+    </header>
+
+    <!-- Messages display -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <nav>
+        <a href="{% url 'notes:note_list' %}">Home</a>
+        <a href="{% url 'notes:note_new' %}">New Note</a>
+        <!-- Add more navigation links as needed -->
+        {% block nav_links %}{% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Include any necessary JavaScript -->
+    {% block extra_scripts %}{% endblock %}
+
+    <footer>
+        <!-- Add footer content or links here -->
+        {% block footer %}{% endblock %}
+
+        <!-- Logout button centered in the footer -->
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'notes:logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-logout">Logout</button>
+        </form>
+        {% endif %}
+    </footer>
+</body>
+</html>

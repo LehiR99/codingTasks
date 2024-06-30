@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}My Sticky Notes - {{ note.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ note.title }}</h2>
+    <p>{{ note.content }}</p>
+    <p>Created at: {{ note.created_at }}</p>
+
+    <!-- Delete Form -->
+    <form method="post" action="{% url 'notes:note_delete' pk=note.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn-delete">Delete</button>
+    </form>
+
+    <br>
+    <button onclick="window.location.href='{% url 'notes:note_list' %}'" class="btn-cancel">Back to Note List</button>
+{% endblock %}

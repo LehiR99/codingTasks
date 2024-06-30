@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Sticky Notes</title>
+    <link rel="stylesheet" href="{% static 'notes/styles.css' %}">
+    <!-- Include any additional meta tags, scripts, or stylesheets -->
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>My Sticky Notes</h1>
+    </header>
+
+    <main class="login-form">
+        <form method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+            {{ form.non_field_errors }}
+            <div class="form-field">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="error-message">
+                        {% for error in form.username.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="form-field">
+                {{ form.password.label_tag }}
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="error-message">
+                        {% for error in form.password.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-login">Login</button>
+        </form>
+        <p>Don't have an account? <a href="{% url 'notes:register' %}">Register here</a></p>
+    </main>
+
+    <footer>
+        <!-- Footer content if any -->
+    </footer>
+</body>
+</html>
+
