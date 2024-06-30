@@ -53,13 +53,13 @@ Home Page:
 ![](Images/Screenshot%202024-06-30%20221757.png)
 
 New Note:
-
+![](Images/Screenshot%202024-06-30%20222905.png)
 
 Edit Note:
-
+![](Images/Screenshot%202024-06-30%20223012.png)
 
 Delete Note:
-
+![](Images/Screenshot%202024-06-30%20222933.png)
 
 Credits
 Developed by Lehi
