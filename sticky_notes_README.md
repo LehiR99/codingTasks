@@ -50,7 +50,7 @@ Delete Note: Delete a note by clicking on the delete button next to the note.
 Screenshots
 Home Page:
 
-![](image/Images/Screenshot 2024-06-30 221757.png)
+![](Images/Screenshot 2024-06-30 221757.png)
 
 New Note:
 
