@@ -49,7 +49,7 @@ Edit Note: Edit an existing note by clicking on the edit button next to the note
 Delete Note: Delete a note by clicking on the delete button next to the note.
 Screenshots
 Home Page:
-
+![](Images/Screenshot%202024-06-30%20221813.png)
 ![](Images/Screenshot%202024-06-30%20221757.png)
 
 New Note:
